@@ -19812,21 +19812,75 @@ module.exports = require('./lib/React');
 },{"./lib/React":29}],157:[function(require,module,exports){
 var React = require('react');
 
+var AppCarousel = React.createClass({displayName: "AppCarousel",
+
+	render: function() {
+		return (
+			React.createElement("div", {id: "carousel-example-generic", className: "carousel slide", "data-ride": "carousel"}, 
+
+  React.createElement("ol", {className: "carousel-indicators"}, 
+    React.createElement("li", {"data-target": "#carousel-example-generic", "data-slide-to": "0", className: "active"}), 
+    React.createElement("li", {"data-target": "#carousel-example-generic", "data-slide-to": "1"}), 
+    React.createElement("li", {"data-target": "#carousel-example-generic", "data-slide-to": "2"})
+  ), 
+
+
+  React.createElement("div", {className: "carousel-inner", role: "listbox"}, 
+    React.createElement("div", {className: "item active"}, 
+      React.createElement("img", {src: "../../assets/logo.png", alt: "..."}), 
+      React.createElement("div", {className: "carousel-caption"}
+        
+      )
+    ), 
+    React.createElement("div", {className: "item"}, 
+      React.createElement("img", {src: "../../assets/dog.jpg", alt: "..."}), 
+      React.createElement("div", {className: "carousel-caption"}
+        
+      )
+    )
+    
+  ), 
+
+
+  React.createElement("a", {className: "left carousel-control", href: "#carousel-example-generic", role: "button", "data-slide": "prev"}, 
+    React.createElement("span", {className: "glyphicon glyphicon-chevron-left", "aria-hidden": "true"}), 
+    React.createElement("span", {className: "sr-only"}, "Previous")
+  ), 
+  React.createElement("a", {className: "right carousel-control", href: "#carousel-example-generic", role: "button", "data-slide": "next"}, 
+    React.createElement("span", {className: "glyphicon glyphicon-chevron-right", "aria-hidden": "true"}), 
+    React.createElement("span", {className: "sr-only"}, "Next")
+  )
+)
+		);
+	}
+
+});
+
+module.exports = AppCarousel;
+
+},{"react":156}],158:[function(require,module,exports){
+var React = require('react');
+
 var AppNavBar = React.createClass({displayName: "AppNavBar",
 
 	render: function() {
 		return (
-			React.createElement("nav", {className: "navbar-inverse navbar-default navbar-fixed-top"}, 
+			React.createElement("nav", {className: "navbar navbar-default"}, 
 				React.createElement("div", {className: "container"}, 
 
 					React.createElement("div", {className: "navbar-header"}, 
+						React.createElement("button", {type: "button", className: "navbar-toggle", "data-toggle": "collapse", "data-target": ".navbar-collapse"}, 
+							React.createElement("span", {className: "icon-bar"}), 
+							React.createElement("span", {className: "icon-bar"}), 
+							React.createElement("span", {className: "icon-bar"})
+						), 
 						React.createElement("a", {className: "navbar-brand", href: "#"}, 
-							React.createElement("img", {src: "../../assets/logo.png", style: {maxWidth:'100px', marginTop:'-9px'}, alt: "MOPT"})
+							React.createElement("img", {src: "../../assets/logo.png", style: {maxWidth:'50px', marginTop:'-9px'}, alt: "MOPT"})
 						)
 					), 
 				
 
-					React.createElement("div", {className: "collapse navbar-collapse flex-list"}, 
+					React.createElement("div", {className: "collapse navbar-collapse"}, 
 						React.createElement("ul", {className: "nav navbar-nav"}, 
 							React.createElement("li", null, React.createElement("a", {href: "#"}, "About Us")), 
 							React.createElement("li", null, React.createElement("a", {href: "#"}, "AlterG")), 
@@ -19846,27 +19900,34 @@ var AppNavBar = React.createClass({displayName: "AppNavBar",
 
 module.exports = AppNavBar;
 
-},{"react":156}],158:[function(require,module,exports){
+},{"react":156}],159:[function(require,module,exports){
 var React = require('react');
 var NavBar = require('./app-navbar');
+var Carousel = require('./app-carousel');
 
 var App = React.createClass({displayName: "App",
 
 	render: function() {
 		return (
 			React.createElement("div", null, 
-				React.createElement(NavBar, null)
+				React.createElement("div", null, 
+					React.createElement(NavBar, null)
+				), 
+				React.createElement("div", null, 
+					React.createElement(Carousel, null)
+				)
 			)
+			
 		);
 	}
 });
 
 module.exports = App;
 
-},{"./app-navbar":157,"react":156}],159:[function(require,module,exports){
+},{"./app-carousel":157,"./app-navbar":158,"react":156}],160:[function(require,module,exports){
 var App = require('./components/app');
 var React = require('react');
 
 React.render(React.createElement(App, null), document.getElementById('main'));
 
-},{"./components/app":158,"react":156}]},{},[159]);
+},{"./components/app":159,"react":156}]},{},[160]);

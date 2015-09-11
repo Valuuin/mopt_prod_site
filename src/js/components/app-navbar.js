@@ -4,17 +4,22 @@ var AppNavBar = React.createClass({
 
 	render: function() {
 		return (
-			<nav className="navbar-inverse navbar-default navbar-fixed-top">
+			<nav className="navbar navbar-default">
 				<div className="container">
 
 					<div className="navbar-header">
+						<button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>
+							<span className="icon-bar"></span>
+						</button>
 						<a className="navbar-brand" href="#">
-							<img src="../../assets/logo.png" style={{maxWidth:'100px', marginTop:'-9px'}} alt='MOPT' />
+							<img src="../../assets/logo.png" style={{maxWidth:'50px', marginTop:'-9px'}} alt='MOPT' />
 						</a>
 					</div>
 				
 
-					<div className="collapse navbar-collapse flex-list">
+					<div className="collapse navbar-collapse">
 						<ul className="nav navbar-nav">
 							<li><a href="#">About Us</a></li>
 							<li><a href="#">AlterG</a></li>
