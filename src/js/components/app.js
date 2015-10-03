@@ -7,14 +7,9 @@ var App = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<div> 
-					<NavBar />
-				</div>
-				<div>
-					<Carousel />
-				</div>
+				<NavBar />
+				<Carousel />
 			</div>
-			
 		);
 	}
 });
